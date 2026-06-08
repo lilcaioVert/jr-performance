@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'motion/react';
 import { Activity, ChevronRight } from 'lucide-react';
 
@@ -20,18 +21,20 @@ const Hero = () => {
           <div className="lg:col-span-7 flex flex-col justify-center text-left">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wide uppercase mb-6 self-start"
             >
-              <Activity className="w-4 h-4 text-blue-500 animate-pulse" />
+              <Activity className="w-4 h-4 text-blue-500" />
               <span>Alta Performance &amp; Método GPS</span>
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
               className="font-display font-black text-4xl sm:text-5xl md:text-6xl text-white italic tracking-tight uppercase leading-snug pt-2 mb-6"
             >
               MÉTODO, ESTRATÉGIA E{' '}
@@ -44,8 +47,9 @@ const Hero = () => {
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
               className="text-zinc-300 text-lg md:text-xl font-normal leading-relaxed mb-8 max-w-2xl"
             >
               Eleve sua performance com o <strong className="text-white font-medium">Método GPS em 8 semanas</strong>. Assessoria esportiva de elite para corredores de rua, trail runners e atletas focados em evolução contínua.
@@ -53,8 +57,9 @@ const Hero = () => {
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-4 mb-10"
             >
               <a
@@ -79,8 +84,9 @@ const Hero = () => {
             {/* Micro Badges */}
             <motion.div
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
               className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4 border-t border-zinc-900 pt-8 text-center md:text-left"
             >
               <div className="flex flex-col items-center md:items-start">
@@ -102,15 +108,18 @@ const Hero = () => {
           <div className="lg:col-span-5 relative flex justify-center items-center h-[400px] sm:h-[500px] lg:h-[600px] w-full self-end lg:self-center">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, ease: 'easeOut' }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: 'easeOut' }}
               className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl border border-white/5"
             >
-              <img 
-                src="/foto2.png" 
-                alt="Jonathas Figueiredo JF Performance" 
-                className="w-full h-full object-cover object-center relative z-0 filter brightness-105"
-                loading="lazy"
+              <Image
+                src="/foto2.png"
+                alt="Jonathas Figueiredo JF Performance"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
+                className="object-cover object-center relative z-0 brightness-105"
+                priority
               />
               
               {/* Vertical left side gradient mask */}

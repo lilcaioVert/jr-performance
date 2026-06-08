@@ -10,12 +10,14 @@ const nextConfig: NextConfig = {
   },
   // Allow access to remote image placeholder.
   images: {
+    formats: ['image/avif', 'image/webp'],
+    deviceSizes: [390, 430, 768, 1024, 1280, 1536],
     remotePatterns: [
       {
         protocol: 'https',
         hostname: 'picsum.photos',
         port: '',
-        pathname: '/**', // This allows any path under the hostname
+        pathname: '/**',
       },
     ],
   },
