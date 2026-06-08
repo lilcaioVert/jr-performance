@@ -1,0 +1,6 @@
+{
+  "name": "JF Performance",
+  "description": "Landing Page institucional para a assessoria esportiva JF Performance do Personal Jonathas Figueiredo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
